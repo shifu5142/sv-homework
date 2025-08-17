@@ -69,11 +69,11 @@ const calcLength = function (...arg) {
 };
 calcLength("asdasd", "sd", "asfsdf");
 //3
-// const checkUpperCase = function () {
-//   // e.preventDefault();
-//   let input = document.getElementById("input").value;
-//   if (input.include("A")) console.log(true);
-// };
+const checkUpperCase = function () {
+  // e.preventDefault();
+  let num = document.getElementById("input").value;
+  if (num.includes("A")) console.log(num.replaceAll("A", "a"));
+};
 //4
 const cheackNum = function (num) {
   if (num >= 0) console.log("המספר חיובי");
@@ -98,15 +98,15 @@ const checkLetters = function (num) {
 const transformMoney = function () {
   let moneyType = document.querySelector(".box1").value;
   let moneyAmount = document.querySelector(".box2").value;
-  if (moneyType === "euro" && moneyAmount !== null) {
+  if (moneyType.toLowerCase() === "euro" && moneyAmount !== null) {
     alert(`סכום הכסף שיש לך בשקלים הוא:₪ ${moneyAmount * 4.2}`);
     return;
   }
-  if (moneyType === "dollar" && moneyAmount !== null) {
+  if (moneyType.toLowerCase() === "dollar" && moneyAmount !== null) {
     alert(`סכום הכסף שיש לך בשקלים הוא:₪ ${moneyAmount * 3.9}`);
     return;
   }
-  if (moneyType === "lira sterling" && moneyAmount !== null) {
+  if (moneyType.toLowerCase() === "lira sterling" && moneyAmount !== null) {
     alert(`סכום הכסף שיש לך בשקלים הוא:₪ ${moneyAmount * 5}`);
     return;
   } else alert("sonething went wrong please recorrect the inputes");

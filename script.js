@@ -98,15 +98,15 @@ const checkLetters = function (num) {
 const transformMoney = function () {
   let moneyType = document.querySelector(".box1").value;
   let moneyAmount = document.querySelector(".box2").value;
-  if (moneyType.toLowerCase() === "euro" && moneyAmount !== null) {
+  if (moneyType === "euro-op" && moneyAmount !== null) {
     alert(`סכום הכסף שיש לך בשקלים הוא:₪ ${moneyAmount * 4.2}`);
     return;
   }
-  if (moneyType.toLowerCase() === "dollar" && moneyAmount !== null) {
+  if (moneyType === "Dollar-op" && moneyAmount !== null) {
     alert(`סכום הכסף שיש לך בשקלים הוא:₪ ${moneyAmount * 3.9}`);
     return;
   }
-  if (moneyType.toLowerCase() === "lira sterling" && moneyAmount !== null) {
+  if (moneyType === "Lira-op" && moneyAmount !== null) {
     alert(`סכום הכסף שיש לך בשקלים הוא:₪ ${moneyAmount * 5}`);
     return;
   } else alert("sonething went wrong please recorrect the inputes");

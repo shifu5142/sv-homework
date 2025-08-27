@@ -7,40 +7,40 @@
     <title>Basic HTML Page</title>
   </head>
   <body>
-    <section id="section1">
-      <h1 id="heading">Welcome to My Basic HTML Page</h1>
-      <!-- <button oneclick>Click me</button> -->
-      <div class="container">
-        <input type="text" id="input" placeholder="please enter the text" />
-        <a class="button-click" href="#" onclick="checkUpperCase()">sent</a>
-      </div>
-    </section>
-    <section id="section2">
-      <div class="container1">
-        <!-- Left Column -->
-        <div class="column">
-          <label>money amount</label>
-          <input class="box box2" type="text" placeholder="Enter amount" />
-          <a href="" class="big-box" onclick="transformMoney()">בצע</a>
-        </div>
+    <div class="field">
+      <label for="centered">Please Type your ID</label>
+      <input
+        id="centered"
+        type="text"
+        class="input"
+        placeholder="Type your id..."
+      />
+      <a href="#" onclick="checkId()" class="send-link">Send</a>
+      <!-- section 2 -->
+      <div class="calculator">
+        <div class="display">0</div>
+        <div class="buttons">
+          <button value="7">7</button>
+          <button value="8">8</button>
+          <button value="9">9</button>
+          <button class="operator">/</button>
 
-        <!-- Right Column -->
-        <div class="column">
-          <label>coin type</label>
-          <!-- <input class="box box1" type="selector" /> -->
-          <select name="coin-type" class="box box1">
-            <option value="euro-op">€Euro</option>
-            <option value="Dollar-op">$Dollar</option>
-            <option value="Lira-op">£Lira sterling</option>
-          </select>
-          <div class="text">
-            Coins Type:<br />
-            * €Euro 4.2<br />
-            * $Dollar 3.9<br />
-            * £Lira sterling 5.0
-          </div>
+          <button value="4">4</button>
+          <button value="5">5</button>
+          <button value="6">6</button>
+          <button class="operator">*</button>
+
+          <button value="1">1</button>
+          <button value="2">2</button>
+          <button value="3">3</button>
+          <button class="operator">-</button>
+
+          <button value="0">0</button>
+          <button value=".">.</button>
+          <button value="=">=</button>
+          <button class="operator">+</button>
         </div>
       </div>
-    </section>
+    </div>
   </body>
 </html>

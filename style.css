@@ -10,111 +10,25 @@
 * {
   box-sizing: border-box;
 }
-html,
 body {
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensures the body takes at least the full viewport height */
   margin: 0;
-}
-body {
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
-    "Helvetica Neue", Arial;
-  background: var(--bg);
-  display: grid;
-  place-items: center;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Light gray background */
 }
 
-.field {
-  width: min(320px, 90%);
+.container {
   text-align: center;
-}
-
-label {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 1rem;
-  color: var(--text);
-}
-.input {
-  width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(6, 78, 59, 0.7);
-  color: var(--text);
-  border-radius: var(--radius);
-  padding: 12px 14px;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.input:focus {
-  border-color: var(--brand);
-  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
-}
-
-.send-link {
-  display: block;
-  margin: 16px auto 0;
-  width: fit-content;
-  padding: 10px 16px;
-  border-radius: var(--radius);
-  background: linear-gradient(135deg, var(--brand), var(--brand-2));
-  color: #064e3b;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-
-.send-link:hover {
-  background: linear-gradient(135deg, var(--brand-2), var(--brand));
-}
-/* section2 */
-.calculator {
-  margin-top: 100px;
-  background: #0b7c5e;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  width: 300px;
+  background-color: #ffffff; /* White background for the title container */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.display {
-  background: #fff;
+h1 {
   color: #333;
-  font-size: 2rem;
-  padding: 15px;
-  text-align: right;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  overflow: hidden;
-  width: 250px;
-}
-
-.buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
-
-.buttons button {
-  padding: 20px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 5px;
-  background: #fff;
-  color: #333;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.buttons button.operator,
-.buttons button.operator:visited {
-  background: #ff9500;
-}
-.buttons button.operator:hover {
-  background-color: #f9a631;
-}
-
-.buttons button:active,
-.buttons button.operator:active {
-  background: #555;
+  font-size: 2.5em; /* Larger font size for the title */
 }

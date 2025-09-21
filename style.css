@@ -12,12 +12,17 @@
 }
 body {
   display: flex;
+  flex-direction: column;
+  gap: 100px;
+  box-shadow: 0;
+  display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh; /* Ensures the body takes at least the full viewport height */
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f0f0f0; /* Light gray background */
+  margin-top: 20px;
 }
 
 .container {
@@ -31,4 +36,179 @@ body {
 h1 {
   color: #333;
   font-size: 2.5em; /* Larger font size for the title */
+}
+.part2,
+.part3 {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  width: 320px;
+  text-align: center;
+}
+
+/* Style the text input */
+input[type="text"] {
+  width: 85%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+  outline: none;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3498db;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+.table-container {
+  position: relative; /* relative container */
+  display: inline-block;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background: #4caf50;
+  color: white;
+}
+.average-row div {
+  background-color: #fff;
+}
+tr:nth-child(even),
+.average-row div:nth-child(even) {
+  background: #f9f9f9;
+}
+.average-row div:first-child {
+  color: white;
+}
+tr:hover,
+.average-row div:hover {
+  background: #f1f1f1;
+}
+
+/* Button positioned relative to the table container */
+.relative-btn {
+  position: relative;
+  top: 20px; /* move down */
+  left: 0px; /* move sideways */
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.relative-btn:hover {
+  background: #45a049;
+}
+.average-row {
+  position: absolute;
+  top: 0px; /* align with first row of table */
+  left: 100%; /* place to the right of table */
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.average-row div {
+  padding: 12px;
+  min-width: 100px;
+  text-align: center;
+  font-weight: bold;
+}
+.average-row div:first-child {
+  background-color: #4caf50;
+}
+.mission-list {
+  list-style-type: none;
+  padding: 0;
+  max-width: 500px;
+  margin: auto;
+}
+
+.mission-list li {
+  background: white;
+  margin-bottom: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mission-list li strong {
+  color: #4caf50;
+}
+
+.delete-link,
+.arr-Button,
+.colors-Button {
+  color: white;
+  background: #4caf50;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+  margin-left: 20px;
+  transition: all 0.3s;
+}
+.delete-link:hover,
+.arr-Button:hover,
+.colors-Button:hover {
+  background-color: #45a049;
+}
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* space between numbers and link */
+}
+
+.numbers {
+  padding: 10px 15px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.numbers span {
+  margin: 0 5px;
+  font-weight: bold;
+  color: #333;
 }

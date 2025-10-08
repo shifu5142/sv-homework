@@ -1,214 +1,202 @@
 :root {
-  --bg: #064e3b; /* dark green */
-  --text: #ecfdf5; /* very light green */
-  --brand: #22c55e; /* green */
-  --brand-2: #4ade80; /* light green */
-  --radius: 16px;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --bg: #f0fdf4;
+  --card: #ffffff;
+  --accent: #16a34a;
+  --accent-light: #bbf7d0;
+  --muted: #64748b;
+  --radius: 12px;
+  font-family: system-ui, sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-}
+/* body {
+ 
+} */
 body {
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
-  box-shadow: 0;
+  margin: 0 0;
+  width: 100%;
+  background: var(--bg);
+
+  color: #1e293b;
+}
+.part1,
+.part3 {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Ensures the body takes at least the full viewport height */
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0; /* Light gray background */
-  margin-top: 20px;
 }
-
+.part2 {
+  height: 100vh;
+  background-color: #fff;
+}
 .container {
-  text-align: center;
-  padding: 20px;
-  background-color: #ffffff; /* White background for the title container */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background: var(--card);
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  width: 340px;
 }
 
 h1 {
-  color: #333;
-  font-size: 2.5em; /* Larger font size for the title */
-}
-.part2,
-.part3 {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  width: 320px;
-  text-align: center;
+  margin: 0 0 16px;
+  font-size: 20px;
+  color: var(--accent);
 }
 
-/* Style the text input */
-input[type="text"] {
-  width: 85%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-input[type="text"]:focus {
-  border-color: #3498db;
-  box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
-  outline: none;
-}
-
-/* Style the submit button */
-input[type="submit"] {
-  padding: 12px 25px;
-  border: none;
-  border-radius: 6px;
-  background-color: #3498db;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-input[type="submit"]:hover {
-  background-color: #2980b9;
-}
-
-.table-container {
-  position: relative; /* relative container */
-  display: inline-block;
-}
-
-table {
-  border-collapse: collapse;
-  width: 80%;
-  background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-th,
-td {
-  border: 1px solid #ddd;
-  padding: 12px;
-  text-align: center;
-}
-
-th {
-  background: #4caf50;
-  color: white;
-}
-.average-row div {
-  background-color: #fff;
-}
-tr:nth-child(even),
-.average-row div:nth-child(even) {
-  background: #f9f9f9;
-}
-.average-row div:first-child {
-  color: white;
-}
-tr:hover,
-.average-row div:hover {
-  background: #f1f1f1;
-}
-
-/* Button positioned relative to the table container */
-.relative-btn {
-  position: relative;
-  top: 20px; /* move down */
-  left: 0px; /* move sideways */
-  background: #4caf50;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.relative-btn:hover {
-  background: #45a049;
-}
-.average-row {
-  position: absolute;
-  top: 0px; /* align with first row of table */
-  left: 100%; /* place to the right of table */
+.controls {
   display: flex;
-  flex-direction: column;
-  gap: 1px;
+  gap: 10px;
+  margin-bottom: 18px;
 }
 
-.average-row div {
-  padding: 12px;
-  min-width: 100px;
-  text-align: center;
-  font-weight: bold;
-}
-.average-row div:first-child {
-  background-color: #4caf50;
-}
-.mission-list {
-  list-style-type: none;
-  padding: 0;
-  max-width: 500px;
-  margin: auto;
-}
-
-.mission-list li {
-  background: white;
-  margin-bottom: 10px;
-  padding: 12px 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.mission-list li strong {
-  color: #4caf50;
-}
-
-.delete-link,
-.arr-Button,
-.colors-Button {
-  color: white;
-  background: #4caf50;
-  padding: 6px 12px;
-  border-radius: 5px;
-  text-decoration: none;
+.text-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #d1fae5;
+  border-radius: var(--radius);
+  background: #f9fafb;
   font-size: 14px;
-  transition: 0.3s;
-  margin-left: 20px;
+  outline: none;
   transition: all 0.3s;
 }
-.delete-link:hover,
-.arr-Button:hover,
-.colors-Button:hover {
-  background-color: #45a049;
+
+.text-input:focus,
+.text-input:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
 }
-.container {
+
+.link-btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.link-btn:hover {
+  background: var(--accent-light);
+}
+
+.list {
+  border: 2px dashed #bbf7d0;
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+  background: #f0fdf4;
+  min-height: 80px;
+  position: relative;
+}
+.mission-list {
+  list-style: none;
+  padding: 0;
+}
+.delete {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+.part2 {
+  font-family: Arial, sans-serif;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 20px; /* space between numbers and link */
+  height: 100vh;
+}
+.login-box {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
 }
 
-.numbers {
-  padding: 10px 15px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--accent);
 }
 
-.numbers span {
-  margin: 0 5px;
-  font-weight: bold;
+/* Wrapper for inputs + delete button */
+.inputs-wrapper {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+/* Delete button positioned upper-right */
+.delete-btn {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  color: #7d7d7d;
+  padding: 6px 12px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.delete-btn:hover {
   color: #333;
+}
+
+/* Input fields */
+.inputs-wrapper input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Login button */
+.login-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.login-btn:hover {
+  background: var(--accent-light);
+  color: #64748b;
+}
+.second-btn {
+  display: none;
+}
+.part3 .login-box {
+  position: relative;
+}
+.user-inf {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  top: -60px;
+  right: 10px;
+  background-color: var(--accent);
+  padding: 0px 015px;
+  color: #fff;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.size-6 {
+  width: 24px;
+  height: 24px;
+  color: #fff;
 }

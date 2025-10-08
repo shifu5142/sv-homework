@@ -8,168 +8,64 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <section class="part1">
+      <div class="container">
+        <h1>To Do List</h1>
+        <div class="controls">
+          <input
+            type="text"
+            class="text-input"
+            placeholder="Type something..."
+          />
+          <a href="#" class="link-btn" onclick="addMission()">+ Add</a>
+        </div>
+        <div class="list">
+          <ul class="mission-list"></ul>
+          <a href="#" class="link-btn delete" onclick="deleteMem()"
+            >🗑 Delete all</a
+          >
+        </div>
+      </div>
+    </section>
     <section class="part2">
-      <form>
-        <input class="amount" type="text" placeholder="Enter number" />
-        <input type="submit" value="Submit" onclick="filtrerProd(event)" />
-      </form>
+      <div class="login-box">
+        <h2>Session Storage</h2>
+        <div class="inputs-wrapper">
+          <a href="#" class="delete-btn" onclick="deleteInp(event)"
+            >delete inputes</a
+          >
+          <input type="text" placeholder="Enter your name" required />
+          <input type="email" placeholder="Enter your email" required />
+        </div>
+        <a href="#" class="login-btn" onclick="infSave(event)">Login</a>
+      </div>
     </section>
     <section class="part3">
-      <input
-        class="amount author-name"
-        type="text"
-        placeholder="Enter book author"
-      />
-      <input type="submit" value="Submit" onclick="checjBook(event)" />
-    </section>
-    <section class="part4">
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th>Test Number</th>
-              <th>Grade 📘</th>
-              <th>Grade 📗</th>
-              <th>Grade 📘</th>
-              <th>Grade 📗</th>
-              <th>Grade 📘</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Test 1</td>
-              <td>85</td>
-              <td>72</td>
-              <td>90</td>
-              <td>88</td>
-              <td>95</td>
-            </tr>
-            <tr>
-              <td>Test 2</td>
-              <td>60</td>
-              <td>100</td>
-              <td>78</td>
-              <td>82</td>
-              <td>91</td>
-            </tr>
-            <tr>
-              <td>Test 3</td>
-              <td>88</td>
-              <td>95</td>
-              <td>70</td>
-              <td>65</td>
-              <td>80</td>
-            </tr>
-            <tr>
-              <td>Test 4</td>
-              <td>55</td>
-              <td>65</td>
-              <td>75</td>
-              <td>85</td>
-              <td>92</td>
-            </tr>
-            <tr>
-              <td>Test 5</td>
-              <td>99</td>
-              <td>98</td>
-              <td>97</td>
-              <td>95</td>
-              <td>94</td>
-            </tr>
-            <tr>
-              <td>Test 6</td>
-              <td>40</td>
-              <td>50</td>
-              <td>60</td>
-              <td>70</td>
-              <td>80</td>
-            </tr>
-            <tr>
-              <td>Test 7</td>
-              <td>73</td>
-              <td>76</td>
-              <td>79</td>
-              <td>82</td>
-              <td>85</td>
-            </tr>
-            <tr>
-              <td>Test 8</td>
-              <td>20</td>
-              <td>35</td>
-              <td>45</td>
-              <td>55</td>
-              <td>65</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <a class="relative-btn" onclick="mathAverage()">Math Average Grades</a>
-      </div>
-    </section>
-    <section class="part5">
-      <ul class="mission-list">
-        <li>
-          <span><strong>ID 1:</strong> Collect 10 coins</span>
-          <a href="#" class="delete-link">Delete</a>
-        </li>
-        <li>
-          <span><strong>ID 2:</strong> Defeat the dragon</span>
-          <a href="#" class="delete-link">Delete</a>
-        </li>
-        <li>
-          <span><strong>ID 3:</strong> Rescue the villager</span>
-          <a href="#" class="delete-link">Delete</a>
-        </li>
-        <li>
-          <span><strong>ID 4:</strong> Find the hidden treasure</span>
-          <a href="#" class="delete-link">Delete</a>
-        </li>
-        <li>
-          <span><strong>ID 5:</strong> Complete the puzzle</span>
-          <a href="#" class="delete-link">Delete</a>
-        </li>
-        <li>
-          <span><strong>ID 6:</strong> Explore the secret cave</span>
-          <a href="#" class="delete-link">Delete</a>
-        </li>
-        <li>
-          <span><strong>ID 7:</strong> Gather 5 herbs</span>
-          <a href="#" class="delete-link">Delete</a>
-        </li>
-        <li>
-          <span><strong>ID 8:</strong> Deliver the message</span>
-          <a href="#" class="delete-link">Delete</a>
-        </li>
-        <li>
-          <span><strong>ID 9:</strong> Build a shelter</span>
-          <a href="#" class="delete-link">Delete</a>
-        </li>
-        <li>
-          <span><strong>ID 10:</strong> Win the race</span>
-          <a href="#" class="delete-link">Delete</a>
-        </li>
-      </ul>
-    </section>
-    <section class="part6">
-      <div class="container">
-        <div class="numbers">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-          <span>4</span>
-          <span>5</span>
-          <span>6</span>
-          <span>7</span>
-          <span>8</span>
-          <span>9</span>
-          <span>10</span>
+      <div class="login-box">
+        <div class="user-inf">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+            />
+          </svg>
         </div>
-        <a class="arr-Button" href="#">Parse Numbers</a>
+        <h2>Login</h2>
+        <div class="inputs-wrapper second-wrap">
+          <a href="#" class="delete-btn second-btn">Logout</a>
+          <input type="text" placeholder="Enter your username" required />
+          <input type="password" placeholder="Enter password" required />
+        </div>
+        <a href="#" class="login-btn second-log">Login</a>
       </div>
-    </section>
-    <section class="part7">
-      <a class="arr-Button" onclick="creatCol(event)" href="#">creat</a>
-      <div class="colors-container"></div>
     </section>
   </body>
 </html>

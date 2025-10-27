@@ -1,161 +1,94 @@
 "use strict";
-//class part
-class Drive {
-  constructor(renterName, date, rentKm) {
-    this.renterName = renterName;
-    this.date = date;
-    this.rentKm = rentKm;
-  }
-}
-
-class Car {
-  constructor(compName, modelName, carMil) {
-    this.compName = compName;
-    this.modelName = modelName;
-    this.availableCar = true;
-    this.carMil = carMil;
-  }
-  static drives = [
-    new Drive("Alice", "2025-09-30", 120),
-    new Drive("Bob", "2025-09-25", 300),
-    new Drive("Charlie", "2025-09-20", 180),
-  ];
-
-  kilNum = "";
-  calcKm() {
-    return (this.rentKm = Car.drives.reduce((cur, acc) => (acc += cur)));
-  }
-  updateKm(travel) {
-    Car.drives.push(travel);
-    this.calcKm();
-  }
-}
-class CompanyCars {
-  constructor(compName) {
-    this.compName = compName;
-  }
-  static companyCarArr = [
-    new Car("Toyota", "Corolla", 120000),
-    new Car("Honda", "Civic", 80000),
-    new Car("Ford", "Focus", 60000),
-  ];
-  addCar(car) {
-    CompanyCars.companyCarArr.push(car);
-  }
-  highestKil() {
-    let bigestNum;
-    CompanyCars.companyCarArr.forEach((acc) => {
-      if (bigestNum.kilNum <= acc.kilNum) bigestNum = acc;
-    });
-    console.log(
-      `The car with the highest kilometer is ${bigestNum} and the kilometer is ${bigestNum.kilNum} `
-    );
-  }
-  availableCar() {
-    const availableCarArr = CompanyCars.companyCarArr.map(
-      (value) => value.availableCar
-    );
-    console.log(`All the available cars are ${availableCarArr.join(", ")}`);
-  }
-  addDrive(compName, driveObj) {}
-}
-
-//part 2
 //1
-let missionImp = document.querySelector(".text-input");
-const missionLis = document.querySelector(".mission-list");
-let missionArr = [];
-let i = 1;
-const addMission = function () {
-  if (!missionImp.value) alert("the input is empty");
-  missionLis.innerHTML += `<li>Mission ${i}: ${missionImp.value}</li>`;
-  i++;
-  missionArr.push(missionImp.value);
-  localStorage.setItem("todos", missionArr);
-  missionImp.value = "";
-};
-document.addEventListener("DOMContentLoaded", () => {
-  if (localStorage.getItem("todos")) {
-    const todos = localStorage.getItem("todos").split(",");
-    console.log(todos);
-    missionLis.innerHTML += `the previos mission left:`;
-    todos.forEach(
-      (value, i) =>
-        (missionLis.innerHTML += `<li>Missions number:${i + 1} ${value}</li>`)
-    );
-  }
-});
-const deleteMem = function () {
-  localStorage.removeItem("todos");
-  missionLis.innerHTML = "";
-};
+const button1=document.querySelector('.link1');
+const button2=document.querySelector('.link2');
+const bigDiv=document.querySelector('.big-div')
+let timer;
+ button1.addEventListener('click',(e)=> {
+  e.preventDefault()
+   const promise = new Promise((resolve, reject) => {
+    timer = setTimeout(() => { 
+      bigDiv.style.backgroundColor = '#007bff';
+      bigDiv.style.transition='all 0.3s'
+      bigDiv.querySelector('p').style.color='#fff'
+      resolve('Background color has changed');
+    }, 2000);
+
+    
+    button2.addEventListener('click', () => {
+      clearTimeout(timer);
+      reject('Background color change has been canceled');
+    }, { once: true }); 
+  });
+
+  promise
+    .then((data) => console.log(data))
+    .catch((err) => console.error(err)) 
+})
 //2
-let inputName = document.querySelector(".inputs-wrapper").children[1];
-let inputEmail = document.querySelector(".inputs-wrapper").children[2];
-const infSave = function (e) {
-  e.preventDefault();
-  if (!inputName.value || !inputEmail.value)
-    alert("The inputes or on of them are empty");
-  let formDraft = {
-    name: inputName.value,
-    email: inputEmail.value,
-  };
-  sessionStorage.setItem("formDraft", JSON.stringify(formDraft));
-};
-document.addEventListener("DOMContentLoaded", () => {
-  if (sessionStorage.getItem("formDraft")) {
-    inputName.value = JSON.parse(sessionStorage.getItem("formDraft")).name;
-    inputEmail.value = JSON.parse(sessionStorage.getItem("formDraft")).email;
-  }
+const timeClock=document.querySelector('.clock')
+const timerCount=function(sec){
+  timeClock.textContent=sec;
+  const data= new Promise((_,reject)=>{   
+   const timer=setInterval(() => {
+    sec--
+      timeClock.textContent=sec
+      if(sec<=0){
+      
+      reject('The timer has end')
+      alert('The timer has end')
+      clearInterval(timer)
+    }
+    }, 1000); 
 });
-
-const deleteInp = function (e) {
-  e.preventDefault();
-  inputName.value = "";
-  inputEmail.value = "";
-  sessionStorage.removeItem("formDraft");
-};
+  data
+    .then((data) => console.log(data))
+    .catch((err) => console.error(err)) 
+}
+timerCount(10)
 //3
-let inputUs = document.querySelector(".second-wrap").children[1];
-let inputPass = document.querySelector(".second-wrap").children[2];
-const deletBtn = document.querySelector(".second-btn");
-const divAdd = document.querySelector(".user-inf");
-document.querySelector(".second-log").addEventListener("click", (e) => {
-  e.preventDefault();
+const customIndexOf =function (string,char) {
+  const promise=new Promise((resolve,reject)=>{
+    for(let i=0;i<=string.length;i++){
+      if(string[i]==char)
+        resolve(`the index of the char is ${[i]}`)
+      
+    }
+    reject(`There isnt any ${char} in the string`)
+  })
+  promise.then((data)=>console.log(data)).catch((err)=>console.log(err))
+}
+customIndexOf('hello','o')
+//4
+const tableBody=document.querySelector('tbody')
+tableBody.innerHTML='';
+const getUsers=async function () {
+  try{
+    let data=   await ( fetch('https://jsonplaceholder.typicode.com/users'))
+    data=await data.json();
+    console.log(data);
+  const dataName=data.map((value)=>value.name )
+  let dataAdress=data.map((value)=>value.address.city)
+  console.log(dataName);
+  console.log(dataAdress);
+  data.forEach(item => {
+        const row = document.createElement("tr");
 
-  if (!inputUs.value || !inputPass.value)
-    alert("The inputes or on of them are empty");
-  else {
-    let userData = {
-      username: inputUs.value,
-      password: inputPass.value,
-    };
-    localStorage.setItem("loggedUser", JSON.stringify(userData));
+        const nameCell = document.createElement("td");
+        nameCell.textContent = item.name;
 
-    inputUs.value = "";
-    inputPass.value = "";
-    divAdd.style.opacity = "1";
-    divAdd.innerHTML = `<p>  Hello ${
-      JSON.parse(localStorage.getItem("loggedUser")).username
-    }  you'r connected</p>`;
-    deletBtn.style.display = "block";
+        const addressCell = document.createElement("td");
+        addressCell.textContent = item.address.city;
+
+        row.appendChild(nameCell);
+        row.appendChild(addressCell);
+
+        tableBody.appendChild(row);
+      });
+}
+catch(err){
+  console.error(err);
+}
   }
-});
-deletBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  inputUs.value = "";
-  inputPass.value = "";
-  localStorage.removeItem("loggedUser");
-  deletBtn.style.display = "none";
-  divAdd.style.opacity = "0";
-  divAdd.innerHTML = "";
-});
-document.addEventListener("DOMContentLoaded", () => {
-  if (localStorage.getItem("loggedUser")) {
-    divAdd.style.opacity = "1";
-    divAdd.innerHTML = `<p>  Hello ${
-      JSON.parse(localStorage.getItem("loggedUser")).username
-    }  you'r connected</p>`;
-    deletBtn.style.display = "block";
-  }
-});
+  
+getUsers()

@@ -1,72 +1,37 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script defer src="script.js"></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework Page</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <section class="part1">
-      <div class="container">
-        <h1>To Do List</h1>
-        <div class="controls">
-          <input
-            type="text"
-            class="text-input"
-            placeholder="Type something..."
-          />
-          <a href="#" class="link-btn" onclick="addMission()">+ Add</a>
-        </div>
-        <div class="list">
-          <ul class="mission-list"></ul>
-          <a href="#" class="link-btn delete" onclick="deleteMem()"
-            >🗑 Delete all</a
-          >
-        </div>
-      </div>
-    </section>
-    <section class="part2">
-      <div class="login-box">
-        <h2>Session Storage</h2>
-        <div class="inputs-wrapper">
-          <a href="#" class="delete-btn" onclick="deleteInp(event)"
-            >delete inputes</a
-          >
-          <input type="text" placeholder="Enter your name" required />
-          <input type="email" placeholder="Enter your email" required />
-        </div>
-        <a href="#" class="login-btn" onclick="infSave(event)">Login</a>
-      </div>
-    </section>
-    <section class="part3">
-      <div class="login-box">
-        <div class="user-inf">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-            />
-          </svg>
-        </div>
-        <h2>Login</h2>
-        <div class="inputs-wrapper second-wrap">
-          <a href="#" class="delete-btn second-btn">Logout</a>
-          <input type="text" placeholder="Enter your username" required />
-          <input type="password" placeholder="Enter password" required />
-        </div>
-        <a href="#" class="login-btn second-log">Login</a>
-        <p>hello world</p>
-      </div>
-    </section>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Layout with Buttons</title>
+  <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <section class="section-1">
+  <div class="clock">00:00 </div>
+  <div class="button-bar">
+    <a class="link1" href="#" >Change Color</a>
+    <a class="link2" href="#">Cancle</a>
+  </div>
+
+  <div class="big-div">
+    <p>Welcome to your modern styled section!  
+       Add text, images, or anything you’d like here.</p>
+  </div>
+  </section>
+  <section class="section-2">
+    <table class="table1">
+    <caption>USERS   DATA</caption>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+    </tbody>
+  </table>
+</section>
+</body>
 </html>

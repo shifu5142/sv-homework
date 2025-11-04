@@ -3,124 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-.section-1 {
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #74b9ff, #a29bfe);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  color: #333;
+body{
+  background-color: #333;
+  color: aliceblue;
 }
-
-/* Top Button Bar */
-.button-bar {
-  margin-top: 40px;
-  margin-bottom: 30px;
-  display: flex;
-  gap: 15px;
-}
-
-.button-bar a {
-  text-decoration: none;
-  background: white;
-  color: #007bff;
-  font-weight: 600;
-  padding: 12px 25px;
-  border-radius: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.button-bar a:hover {
-  background: #007bff;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
-}
-
-/* Big Content Box */
-.big-div {
-  width: 80%;
-  max-width: 900px;
-  height: 400px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+h1{
   text-align: center;
-  padding: 30px;
+  font-size: 48px;
 }
 
-.big-div p {
-  font-size: 1.2rem;
-  color: #555;
-  max-width: 600px;
-  line-height: 1.6;
-}
-.clock {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #007bff;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-}
-.section-2{
-  height: 100vh;
-  justify-content: center;
-  display: flex;
-  padding: 40px;
-}
- .table1 {
-      border-collapse: collapse;
-      width: 70%;
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    thead {
-      background-color: #007bff;
-      color: white;
-    }
-
-    th, td {
-      text-align: left;
-      padding: 7px 8px;
-    }
-
-    tbody tr {
-      border-bottom: 1px solid #e0e0e0;
-      transition: background 0.2s ease;
-    }
-
-    tbody tr:hover {
-      background-color: #f1f8ff;
-    }
-
-    th {
-      font-size: 1.1rem;
-      letter-spacing: 0.5px;
-    }
-
-    td {
-      font-size: 1rem;
-      color: #333;
-    }
-
-    caption {
-      caption-side: top;
-      margin-bottom: 10px;
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: #444;
-    }

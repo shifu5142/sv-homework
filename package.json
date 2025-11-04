@@ -1,0 +1,28 @@
+{
+  "name": "sv-college",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/shifu5142/sv-homework#readme",
+  "bugs": {
+    "url": "https://github.com/shifu5142/sv-homework/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shifu5142/sv-homework.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node script.js"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.19",
+    "lodash-es": "^4.17.21",
+    "uuid": "^13.0.0",
+    "validator": "^13.15.20",
+    "zod": "^4.1.12"
+  }
+}

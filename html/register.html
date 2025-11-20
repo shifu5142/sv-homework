@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up</title>
+  <style>
+  .floating-links {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: #22c55e;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      display: flex;
+      gap: 12px;
+      font-family: Arial, sans-serif;
+    }
+
+    .floating-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .floating-links a:hover {
+      color: #6b7280;
+    }
+    :root{
+      --bg:#f5f7fa;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#22c55e; /* green */
+      --success:#16a34a;
+      --danger:#dc2626;
+      color-scheme: light;
+    }
+
+    *{box-sizing:border-box}
+    html,body{
+      height:100%;margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
+      background:#e9f5ec;
+      color:#0f172a;
+    }
+
+    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:40px}
+
+    .card{
+      width:100%;max-width:480px;
+      background:var(--card);
+      border-radius:14px;
+      padding:28px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08);
+      border:1px solid #d1e7d8;
+    }
+
+    h1{margin:0 0 6px;font-size:22px;color:#0f172a}
+    p.lead{margin:0 0 20px;color:var(--muted);font-size:14px}
+
+    form{display:grid;gap:14px}
+
+    .field{display:flex;flex-direction:column;gap:6px}
+
+    label{font-size:13px;color:#374151}
+
+    input[type="text"], input[type="email"], input[type="password"]{
+      background:#f9fdfb;
+      border:1px solid #cfe9d7;
+      padding:12px 14px;
+      border-radius:8px;
+      color:#0f172a;
+      font-size:14px;
+      transition:all .14s ease;
+    }
+
+    input:focus{
+      border-color:var(--accent);
+      box-shadow:0 0 0 3px rgba(34,197,94,0.25);
+      background:#ffffff;
+    }
+
+    .row{display:flex;gap:12px}
+    .row > .field{flex:1}
+
+    .hint{font-size:12px;color:var(--muted)}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 14px;
+      border-radius:10px;
+      border:0;
+      background:var(--accent);
+      color:#ffffff;
+      font-weight:600;
+      cursor:pointer;
+      font-size:14px;
+      box-shadow:0 4px 12px rgba(34,197,94,0.3);
+      transition:background .15s ease;
+    }
+
+    .btn:hover{background:#1ca14b}
+
+    .small{font-size:13px}
+
+    .errors{color:var(--danger);font-size:13px;margin-top:6px}
+    .success{color:var(--success);font-size:13px;margin-top:6px}
+
+    .footer{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
+
+    @media (max-width:520px){.card{padding:18px}}
+  </style>
+</head>
+<body>
+<div class="floating-links">
+    <a href="index.html">Log In</a>
+    <a href="pasForget.html">Forget Password</a>
+  </div>
+  <div class="wrap">
+    <main class="card">
+      <h1>Create your account</h1>
+      <p class="lead">Sign up to get access. It only takes a minute.</p>
+
+      <form id="signup" action="/register-data" method="post" novalidate>
+        <div class="field">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" placeholder="jane_doe" required minlength="3" aria-describedby="usernameHelp">
+          <div id="usernameHelp" class="hint">Choose 3–30 characters. Letters, numbers and _ are allowed.</div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required aria-describedby="emailHelp">
+          <div id="emailHelp" class="hint">We'll send a confirmation email. Use a real address.</div>
+        </div>
+
+        <div class="row">
+          <div class="field password-wrap">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Create a strong password" required minlength="8" aria-describedby="pwHelp">
+            
+            <div id="pwHelp" class="hint">At least 8 characters. Use letters, numbers & symbols.</div>
+          </div>
+
+          <div class="field password-wrap">
+            <label for="confirm">Confirm password</label>
+            <input id="confirm" name="confirm" type="password" placeholder="Repeat password" required minlength="8">
+            
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="small hint">By signing up you agree to our <a href="#" style="color:inherit;text-decoration:underline;">terms</a>.</div>
+          <button class="btn" type="submit">Sign up</button>
+        </div>
+
+        <div id="message" aria-live="polite"></div>
+      </form>
+    </main>
+  </div>
+
+  
+</body>
+</html>

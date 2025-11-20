@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Two Sections Form Page</title>
+
+  <style>
+    :root {
+      --bg1:#f0f4ff;
+      --bg2:#e6ebf5;
+      --card:#ffffff;
+      --accent:#2563eb;
+      --accent2:#2ecc71;
+      --muted:#6b7280;
+      font-family:Inter, system-ui, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg1);
+      color: #111;
+    }
+
+    /* ⭐ GLOBAL FLEX SECTION STYLE */
+    section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    /* ⭐ REUSABLE CARD */
+    .card {
+      width: 100%;
+      max-width: 380px;
+      background: var(--card);
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 8px 26px rgba(0,0,0,0.08);
+    }
+
+    h1, h2 {
+      margin: 0 0 12px 0;
+      font-size: 22px;
+    }
+
+    p.lead {
+      margin: 0 0 22px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .field label {
+      font-size: 14px;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .field input {
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #dce0e6;
+      font-size: 14px;
+      transition: 0.12s;
+    }
+
+    .field input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 4px 16px rgba(37,99,235,0.12);
+      outline: none;
+    }
+
+    /* ⭐ BUTTONS */
+    .btn-blue {
+      padding: 12px;
+      background: linear-gradient(180deg, var(--accent), #1d4ed8);
+      border: 0;
+      border-radius: 10px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+
+    .btn-blue:hover { opacity: 0.95; }
+
+    .btn-green {
+      padding: 12px;
+      width: 100%;
+      background: linear-gradient(180deg, var(--accent2), #27ae60);
+      border: none;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-green:hover { opacity: 0.92; }
+
+    /* ⭐ FLOATING LINKS */
+    .floating-links {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: var(--accent);
+      padding: 10px 15px;
+      border-radius: 8px;
+      display: flex;
+      gap: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .floating-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .floating-links a:hover {
+      color: #c8d5ff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ⭐ SECTION 1: LOGIN -->
+  <section style="background: linear-gradient(135deg, var(--bg1), var(--bg2));">
+    <div class="floating-links">
+      <a href="register.html">Register</a>
+      <a href="pasForget.html">Forget Password</a>
+    </div>
+
+    <div class="card">
+      <h1>Login</h1>
+      <p class="lead">Enter your username and password to continue.</p>
+
+      <form action="/submit-data" method="post">
+        <div class="field">
+          <label for="username">Username</label>
+          <input id="username" type="text" name="username" required placeholder="Your username" />
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password" required placeholder="Your password" />
+        </div>
+
+        <button type="submit" class="btn-blue">Login</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ⭐ SECTION 2: USER DETAILS -->
+  <section style="background: #eef6f1;">
+    <div class="card">
+      <h2>הכנס פרטים</h2>
+
+      <form action="/second-form" method="post">
+        <div class="field">
+          <label for="first">First name</label>
+          <input id="first" type="text" name="firstName" required placeholder="שם פרטי">
+        </div>
+
+        <div class="field">
+          <label for="last">Last name</label>
+          <input id="last" type="text" name="lastName" required placeholder="שם משפחה">
+        </div>
+
+        <button class="btn-green" type="submit" onclick="sentData(Event)">Send</button>
+      </form>
+      <div id="resultt"></div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -507,33 +507,33 @@ app.get('/',(req,res)=>{
 `).json
 })
 //2
-const sentData=function(event){
-  event.preventDefault();
-  const resultContect=document.getElementById('resultt')
-  const firstName=document.getElementById('first');
-  const lastName=document.getElementById('last');
-  const data=(fetch('/second-form',{
-    headers:{
-      'Accept': 'application/json',
-      'Contect-Type':'application/json'
-    },
-    method:'post',
-    body:json.stringify({
-      firstName,
-      lastName
-    })
+// const sentData=function(event){
+//   event.preventDefault();
+//   const resultContect=document.getElementById('resultt')
+//   const firstName=document.getElementById('first');
+//   const lastName=document.getElementById('last');
+//   const data=(fetch('localhost:3000/second-form',{
+//     headers:{
+//       'Accept': 'application/json',
+//       'Contect-Type':'application/json'
+//     },
+//     method:'post',
+//     body:json.stringify({
+//       firstName,
+//       lastName
+//     })
 
-  }).then((res)=>res.json()).then((data)=>data).catch((err)=>{if(err)throw err}))
-    resultContect.textContent=`Hello ${data.firstName} ${data.lastName}`
-}
+//   }).then((res)=>res.json()).then((data)=>data).catch((err)=>{if(err)throw err}))
+//     resultContect.textContent=`Hello ${data.firstName} ${data.lastName}`
+// }
 //////////////////////////////////////////////////////////////////////////
 //mongoose
 ///////////////////////////////////////////////////////////////////////////
-const StudentSchema=db.Schema({
-  "firstName": string,
-  "lastName": string,
-  "age": number,
-  "course": string
+const StudentSchema=new db.Schema({
+  "firstName": String,
+  "lastName": String,
+  "age": Number,
+  "course": String
 })
 const student=db.model('Student',StudentSchema)
 async function addUsers() {
@@ -546,5 +546,26 @@ async function addUsers() {
 
 addUsers();
 
+const CarsScheme=new db.Schema({
+  'carNumber': Number,
+  'brand': String,
+  'year': Number,
+  'color': String
+})
+const cars=db.model('car',CarsScheme);
+cars.insertMany([{'carNumber': 23423443,
+  'brand': 'toyota',
+  'year': 1990,
+  'color': 'black'},{'carNumber': 235345345,
+  'brand': 'yhundi',
+  'year': 1995,
+  'color': 'red'},{'carNumber': 234234,
+  'brand': 'toyota',
+  'year': 2021,
+  'color': 'green'}])
 
+cars.find({'color':'black'}).then((data)=>console.log(data));
+cars.find({ 'year': { $gte: 2020 } })
+  .then(data => console.log(data))
+  .catch(err => console.log(err));
 app.listen(port,()=>console.log(`this web is listening to port ${port}`))
